@@ -113,3 +113,26 @@ const yearsUntilRetire1 = function (birthYear, firstName) {
 
 console.log(yearsUntilRetire1(1991, "Hulk"));
 console.log(yearsUntilRetire1(1970, "John"));
+
+//Coding challenge (functions)
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+let scoreDolphins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(65, 54, 49);
+function checkWinner(avgDolphins, avgKoalas) {
+  if (avgDolphins >= avgKoalas * 2) {
+    console.log(`Dolphins win ${avgDolphins} vs. ${avgKoalas}`);
+  } else if (avgKoalas >= avgDolphins * 2) {
+    console.log(`Koalas win ${avgKoalas} vs. ${avgDolphins}`);
+  } else {
+    console.log("no team wins");
+  }
+}
+checkWinner(scoreDolphins, scoreKoalas);
+checkWinner(100, 50); //checkWinner function is independent and doesn't care about where the arguments came from
+
+//test data 2
+
+scoreDolphins = calcAverage(85, 54, 41); // reassing values that's why we used let instead of const
+scoreKoalas = calcAverage(23, 34, 27); // reassing values that's why we used let instead of const
+checkWinner(scoreDolphins, scoreKoalas);
